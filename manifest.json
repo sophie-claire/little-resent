@@ -1,0 +1,18 @@
+
+{
+  "name": "My Little Reset",
+  "short_name": "Little Reset",
+  "description": "Your little space to plan, reset and grow.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fffaf3",
+  "theme_color": "#e98eae",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
