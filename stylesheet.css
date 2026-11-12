@@ -1,0 +1,585 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --pink: #e98eae;
+    --dark-pink: #cf6e94;
+    --light-pink: #fff0f5;
+    --cream: #fffaf3;
+    --white: #ffffff;
+    --text: #59434d;
+    --muted: #a58d96;
+    --border: #f2dce5;
+    --shadow: 0 8px 25px rgba(184, 117, 145, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* MAIN LAYOUT */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    padding: 35px 22px;
+    background: var(--light-pink);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.bow {
+    font-size: 42px;
+}
+
+.brand h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin: 8px 0;
+}
+
+.brand p,
+.small-heading {
+    color: var(--dark-pink);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-link {
+    background: transparent;
+    border: none;
+    padding: 14px 16px;
+    text-align: left;
+    color: var(--text);
+    border-radius: 12px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: white;
+    color: var(--dark-pink);
+}
+
+.sidebar-note {
+    margin-top: auto;
+    background: white;
+    padding: 18px;
+    border-radius: 15px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+    flex: 1;
+    padding: 35px 45px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin: 7px 0;
+}
+
+#today-date {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.top-bow {
+    font-size: 38px;
+}
+
+/* SECTIONS */
+
+.page-section {
+    display: none;
+}
+
+.active-section {
+    display: block;
+}
+
+.welcome-card {
+    background: #fce5ed;
+    border-radius: 22px;
+    padding: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.welcome-card h2,
+.page-intro h2,
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    margin: 9px 0;
+}
+
+.welcome-card h2 {
+    font-size: 25px;
+}
+
+.welcome-card p:last-child,
+.page-intro p:last-child {
+    color: #927985;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.flower {
+    font-size: 48px;
+}
+
+/* PROGRESS */
+
+.progress-card,
+.task-category,
+.add-task-card,
+.habit-card,
+.journal-card,
+.stat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 23px;
+    box-shadow: var(--shadow);
+}
+
+.progress-card {
+    margin-bottom: 32px;
+}
+
+.card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.card-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-top: 6px;
+}
+
+#progress-percent {
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--dark-pink);
+}
+
+.progress-track {
+    height: 12px;
+    background: #f9e8ee;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #e99ab7, #cf6e94);
+    border-radius: 30px;
+    transition: width 0.3s ease;
+}
+
+#progress-message,
+#task-count {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+/* CHECKLIST */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    font-size: 24px;
+}
+
+.outline-button {
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--dark-pink);
+    border-radius: 10px;
+    padding: 10px 13px;
+    font-size: 12px;
+}
+
+#task-categories {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.task-category h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.task-item,
+.habit-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 0;
+    border-bottom: 1px solid #f7edf1;
+    font-size: 13px;
+}
+
+.task-item:last-child,
+.habit-item:last-child {
+    border-bottom: none;
+}
+
+.task-item input,
+.habit-item input {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--pink);
+    cursor: pointer;
+}
+
+.task-item span,
+.habit-item span {
+    flex: 1;
+}
+
+.task-item.completed span,
+.habit-item.completed span {
+    text-decoration: line-through;
+    color: #b9a6ae;
+}
+
+/* ADD TASK */
+
+.add-task-card {
+    margin-top: 22px;
+}
+
+.add-task-card h3,
+.habit-card h3,
+.journal-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 16px;
+}
+
+#add-task-form,
+.add-form {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    background: #fffafd;
+    color: var(--text);
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: var(--pink);
+}
+
+#add-task-form button,
+.add-form button,
+#save-journal {
+    background: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    white-space: nowrap;
+}
+
+#add-task-form button:hover,
+.add-form button:hover,
+#save-journal:hover {
+    background: var(--dark-pink);
+}
+
+/* OTHER PAGES */
+
+.page-intro {
+    margin: 10px 0 25px;
+}
+
+.page-intro h2 {
+    font-size: 29px;
+}
+
+.habit-card,
+.journal-card {
+    margin-bottom: 20px;
+}
+
+.add-form {
+    margin-top: 20px;
+}
+
+.journal-card label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+textarea {
+    min-height: 180px;
+    resize: vertical;
+    margin-bottom: 14px;
+    line-height: 1.7;
+}
+
+#journal-status {
+    font-size: 12px;
+    color: var(--dark-pink);
+    margin-top: 10px;
+}
+
+.journal-entry {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+
+.journal-entry button {
+    display: block;
+    margin-top: 8px;
+    border: none;
+    background: none;
+    color: var(--dark-pink);
+    font-size: 12px;
+}
+
+.history-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.history-item strong {
+    color: var(--dark-pink);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+}
+
+.stat-card {
+    text-align: center;
+}
+
+.stat-card span {
+    font-size: 30px;
+}
+
+.stat-card h2 {
+    font-size: 30px;
+    color: var(--dark-pink);
+    margin: 12px 0 5px;
+}
+
+.stat-card p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.quote-card {
+    margin-top: 25px;
+    background: var(--light-pink);
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 35px 0 10px;
+}
+
+/* PHONE VIEW */
+
+@media (max-width: 750px) {
+    .app {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 16px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+        margin-bottom: 15px;
+    }
+
+    .brand h2 {
+        font-size: 19px;
+    }
+
+    .brand p {
+        font-size: 9px;
+    }
+
+    .bow {
+        font-size: 30px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 5px;
+        padding-bottom: 5px;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+        padding: 11px;
+        font-size: 12px;
+    }
+
+    .sidebar-note {
+        display: none;
+    }
+
+    .main-content {
+        padding: 23px 15px;
+    }
+
+    .topbar h1 {
+        font-size: 25px;
+    }
+
+    .top-bow {
+        font-size: 30px;
+    }
+
+    .welcome-card {
+        padding: 20px;
+    }
+
+    .welcome-card h2 {
+        font-size: 20px;
+    }
+
+    .flower {
+        font-size: 35px;
+    }
+
+    #task-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .section-heading h2 {
+        font-size: 20px;
+    }
+
+    #add-task-form {
+        flex-direction: column;
+    }
+
+    #add-task-form button {
+        width: 100%;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-item {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 751px) and (max-width: 950px) {
+    .sidebar {
+        width: 210px;
+    }
+
+    .main-content {
+        padding: 30px 25px;
+    }
+}

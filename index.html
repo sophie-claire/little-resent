@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff1f5">
+    <title>My Little Reset ♡</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="bow">🎀</span>
+            <h2>My Little Reset</h2>
+            <p>PLAN • TICK • GLOW ♡</p>
+        </div>
+
+        <nav>
+            <button class="nav-link active" data-section="dashboard">♡ Dashboard</button>
+            <button class="nav-link" data-section="habits">✿ Habits</button>
+            <button class="nav-link" data-section="journal">♡ Journal</button>
+            <button class="nav-link" data-section="history">☁ History</button>
+            <button class="nav-link" data-section="statistics">✧ Statistics</button>
+        </nav>
+
+        <div class="sidebar-note">
+            <p>A little progress every day adds up. ♡</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="small-heading">YOUR PERSONAL SPACE ♡</p>
+                <h1 id="greeting">Hello, sunshine!</h1>
+                <p id="today-date"></p>
+            </div>
+            <div class="top-bow">🎀</div>
+        </header>
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page-section active-section">
+
+            <div class="welcome-card">
+                <div>
+                    <p class="small-heading">A FRESH START</p>
+                    <h2>Today is yours to make lovely.</h2>
+                    <p>Take things slowly. You don't have to do everything at once.</p>
+                </div>
+                <span class="flower">🌷</span>
+            </div>
+
+            <div class="progress-card">
+                <div class="card-heading">
+                    <div>
+                        <p class="small-heading">YOUR DAILY PROGRESS</p>
+                        <h2>Look at you go! ♡</h2>
+                    </div>
+                    <span id="progress-percent">0%</span>
+                </div>
+
+                <div class="progress-track">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+
+                <p id="progress-message">Every little step counts.</p>
+                <p id="task-count">0 of 0 tasks completed</p>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <p class="small-heading">YOUR LITTLE TO-DO LIST</p>
+                    <h2>Today's checklist</h2>
+                </div>
+                <button id="reset-day" class="outline-button">Reset today ↻</button>
+            </div>
+
+            <div id="task-categories"></div>
+
+            <div class="add-task-card">
+                <h3>Something else on your mind? ♡</h3>
+                <form id="add-task-form">
+                    <input
+                        type="text"
+                        id="new-task"
+                        placeholder="Add your own little task..."
+                        maxlength="100"
+                        required
+                    >
+                    <button type="submit">+ Add task</button>
+                </form>
+            </div>
+
+        </section>
+
+        <!-- HABITS -->
+        <section id="habits" class="page-section">
+            <div class="page-intro">
+                <p class="small-heading">SMALL THINGS, BIG CHANGES</p>
+                <h2>My little habits ✿</h2>
+                <p>Build routines that make you feel good.</p>
+            </div>
+
+            <div class="habit-card">
+                <h3>Daily habits ♡</h3>
+                <div id="habit-list"></div>
+                <form id="add-habit-form" class="add-form">
+                    <input type="text" id="new-habit"
+                           placeholder="Add a habit..." maxlength="70" required>
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- JOURNAL -->
+        <section id="journal" class="page-section">
+            <div class="page-intro">
+                <p class="small-heading">A MOMENT FOR YOURSELF</p>
+                <h2>Dear diary... ♡</h2>
+                <p>Write it down. Let it out. Give yourself space.</p>
+            </div>
+
+            <div class="journal-card">
+                <label for="journal-entry">How are you feeling today?</label>
+                <textarea id="journal-entry"
+                    placeholder="Today I feel..."></textarea>
+                <button id="save-journal">Save my entry ♡</button>
+                <p id="journal-status"></p>
+            </div>
+
+            <div class="journal-card">
+                <h3>Past entries 🌷</h3>
+                <div id="journal-history"></div>
+            </div>
+        </section>
+
+        <!-- HISTORY -->
+        <section id="history" class="page-section">
+            <div class="page-intro">
+                <p class="small-heading">LOOK HOW FAR YOU'VE COME</p>
+                <h2>My daily history ☁</h2>
+                <p>Your previous days and their progress.</p>
+            </div>
+            <div id="history-list" class="history-list"></div>
+        </section>
+
+        <!-- STATISTICS -->
+        <section id="statistics" class="page-section">
+            <div class="page-intro">
+                <p class="small-heading">CELEBRATE YOUR PROGRESS</p>
+                <h2>Your little achievements ✧</h2>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span>🌷</span>
+                    <h2 id="days-tracked">0</h2>
+                    <p>Days tracked</p>
+                </div>
+                <div class="stat-card">
+                    <span>♡</span>
+                    <h2 id="total-completed">0</h2>
+                    <p>Tasks completed</p>
+                </div>
+                <div class="stat-card">
+                    <span>✿</span>
+                    <h2 id="habits-completed">0</h2>
+                    <p>Habit check-ins</p>
+                </div>
+            </div>
+
+            <div class="quote-card">
+                "You are allowed to grow at your own pace." ♡
+            </div>
+        </section>
+
+        <footer>
+            Made with love, for a little reset. 🎀
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
